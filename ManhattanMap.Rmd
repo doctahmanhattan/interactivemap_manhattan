@@ -1,0 +1,29 @@
+---
+title: "Map of Manhattan-07-22-2024" 
+author: "doctahmanhattan"
+output: 
+  html_document:
+    self_contained: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+# Load necessary libraries
+library(leaflet)
+```
+
+```{r}
+# Define coordinates for a point of interest in Manhattan (e.g., Central Park) #
+lat <- 40.785091
+lng <- -73.968285
+```
+```{r}
+# Create a Leaflet map centered on Manhattan
+manhattan_map <- leaflet() %>%
+  addTiles() %>%
+  setView(lng = lng, lat = lat, zoom = 12) %>%
+  addMarkers(lng = lng, lat = lat, popup = "Central Park")
+```
+```{r}
+manhattan_map
+```
